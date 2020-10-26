@@ -56,9 +56,21 @@
               "target": "Package",
               "version": "[3.2.1, )"
             },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.9, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.9, )"
+            },
+            "Microsoft.EntityFrameworkCore.Relational": {
+              "target": "Package",
+              "version": "[3.1.9, )"
+            },
             "System.Net.Http.Json": {
               "target": "Package",
-              "version": "[3.2.0, )"
+              "version": "[3.2.1, )"
             }
           },
           "imports": [
