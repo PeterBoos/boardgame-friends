@@ -239,7 +239,6 @@ C:\Users\peter\source\repos\boardgame-friends\BgFriends\BgFriends.App\obj\Debug\
 C:\Users\peter\source\repos\boardgame-friends\BgFriends\BgFriends.App\obj\Debug\netstandard2.1\Razor\Shared\SurveyPrompt.razor.g.cs
 C:\Users\peter\source\repos\boardgame-friends\BgFriends\BgFriends.App\obj\Debug\netstandard2.1\Razor\_Imports.razor.g.cs
 C:\Users\peter\source\repos\boardgame-friends\BgFriends\BgFriends.App\obj\Debug\netstandard2.1\blazor\unlinked.output
-C:\Users\peter\source\repos\boardgame-friends\BgFriends\BgFriends.App\obj\Debug\netstandard2.1\integrity\UXMLWVFdfPMHhbnlTAqAlUDzj6LYPjaZGA6rRaQZ4NA=.hash
 C:\Users\peter\source\repos\boardgame-friends\BgFriends\BgFriends.App\obj\Debug\netstandard2.1\integrity\WkuXkEV--B1J2kYqjuSPxgHubOHALmA548PhKTed2JE=.hash
 C:\Users\peter\source\repos\boardgame-friends\BgFriends\BgFriends.App\obj\Debug\netstandard2.1\integrity\ZxXy75PYbzJxNfAc-SAP1nUYm4gt1jSaOpFnBb9m85M=.hash
 C:\Users\peter\source\repos\boardgame-friends\BgFriends\BgFriends.App\obj\Debug\netstandard2.1\integrity\BaZPMj95_YNe3G4ckTGD6szZFwZeA2MOHn91zTGKDeU=.hash
@@ -314,13 +313,11 @@ C:\Users\peter\source\repos\boardgame-friends\BgFriends\BgFriends.App\obj\Debug\
 C:\Users\peter\source\repos\boardgame-friends\BgFriends\BgFriends.App\obj\Debug\netstandard2.1\integrity\DrtNiKIMjfSOdamH5Bs5zHmjFADgNiwrY5tRgTm6XuI=.hash
 C:\Users\peter\source\repos\boardgame-friends\BgFriends\BgFriends.App\obj\Debug\netstandard2.1\integrity\LqwA2Rpm96Ualk0IhLZar87kfRCyKHzHTeTt2jYhm7M=.hash
 C:\Users\peter\source\repos\boardgame-friends\BgFriends\BgFriends.App\obj\Debug\netstandard2.1\integrity\czNf3btAeBW-vvID5LAfgcsNZ_GM3ssVuPaMflcg0rs=.hash
-C:\Users\peter\source\repos\boardgame-friends\BgFriends\BgFriends.App\obj\Debug\netstandard2.1\integrity\ShMK_Xwsi9wUENSAU_j7wA2KcaWkTHh12t4N3fGJY-w=.hash
 C:\Users\peter\source\repos\boardgame-friends\BgFriends\BgFriends.App\obj\Debug\netstandard2.1\integrity\mPoqx7XczFHBWk3gRNn0hc9ekG1OvkKY4XiKRY5Mj5U=.hash
 C:\Users\peter\source\repos\boardgame-friends\BgFriends\BgFriends.App\obj\Debug\netstandard2.1\integrity\3S0qzYaBEKOBXarzVLNzNAFXlwJr6nI3lFlYUpQTPH8=.hash
 C:\Users\peter\source\repos\boardgame-friends\BgFriends\BgFriends.App\obj\Debug\netstandard2.1\integrity\UC-3Rm1NkdNdlIrzYARo_dO-HDlS5mhPxo0IQv7kma8=.hash
 C:\Users\peter\source\repos\boardgame-friends\BgFriends\BgFriends.App\obj\Debug\netstandard2.1\integrity\SPHS1EAPAcMFN4TEIUYl3FWtoCQTsNJch0XVGgok1eE=.hash
 C:\Users\peter\source\repos\boardgame-friends\BgFriends\BgFriends.App\obj\Debug\netstandard2.1\blazor\blazor.boot.json
-C:\Users\peter\source\repos\boardgame-friends\BgFriends\BgFriends.App\obj\Debug\netstandard2.1\integrity\Css-V_0P0J_ogVbtnURLhFzAQHPnkR08KKWhqTy2qRg=.hash
 C:\Users\peter\source\repos\boardgame-friends\BgFriends\BgFriends.App\obj\Debug\netstandard2.1\compressed\service-worker-assets.js.gz
 C:\Users\peter\source\repos\boardgame-friends\BgFriends\BgFriends.App\obj\Debug\netstandard2.1\compressed\_framework\_bin\BgFriends.App.dll.gz
 C:\Users\peter\source\repos\boardgame-friends\BgFriends\BgFriends.App\obj\Debug\netstandard2.1\compressed\_framework\_bin\System.Net.Http.Json.dll.gz
@@ -492,3 +489,8 @@ C:\Users\peter\source\repos\boardgame-friends\BgFriends\BgFriends.App\obj\Debug\
 C:\Users\peter\source\repos\boardgame-friends\BgFriends\BgFriends.App\obj\Debug\netstandard2.1\blazor\serviceworkers\wwwroot\service-worker.js
 C:\Users\peter\source\repos\boardgame-friends\BgFriends\BgFriends.App\obj\Debug\netstandard2.1\blazor\service-worker-assets.js
 C:\Users\peter\source\repos\boardgame-friends\BgFriends\BgFriends.App\obj\Debug\netstandard2.1\integrity\Jk9Y9XTSR63gGIFD5NgyKjYqkRjnf_amQjYB2NNTUEw=.hash
+C:\Users\peter\source\repos\boardgame-friends\BgFriends\BgFriends.App\obj\Debug\netstandard2.1\BgFriends.App.csprojAssemblyReference.cache
+C:\Users\peter\source\repos\boardgame-friends\BgFriends\BgFriends.App\obj\Debug\netstandard2.1\integrity\us87-9TA08jBhN6CojlwJo1spxxyiY7w8Qi68fyZQF0=.hash
+C:\Users\peter\source\repos\boardgame-friends\BgFriends\BgFriends.App\obj\Debug\netstandard2.1\integrity\IBiT89jMyvHfcbxvuD35Wgz11UeNaJgGf8DNLS4Xqdk=.hash
+C:\Users\peter\source\repos\boardgame-friends\BgFriends\BgFriends.App\obj\Debug\netstandard2.1\integrity\iY7bcKGAE28GaxgHsE1rQks_SqgzSL2qYeoS5D5ocCg=.hash
+C:\Users\peter\source\repos\boardgame-friends\BgFriends\BgFriends.App\obj\Debug\netstandard2.1\integrity\mR5cQ9LPczqk7zzn3iFGT38NjS9U_6uG0Yyifz0nEvY=.hash
