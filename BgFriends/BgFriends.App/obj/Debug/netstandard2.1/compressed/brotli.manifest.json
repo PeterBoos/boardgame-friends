@@ -1,7 +1,7 @@
 {
   "FilesToCompress": [
     {
-      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\UXMLWVFdfPMHhbnlTAqAlUDzj6LYPjaZGA6rRaQZ4NA=.hash",
+      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\us87-9TA08jBhN6CojlwJo1spxxyiY7w8Qi68fyZQF0=.hash",
       "Source": "C:\\Users\\peter\\source\\repos\\boardgame-friends\\BgFriends\\BgFriends.App\\obj\\Debug\\netstandard2.1\\blazor\\unlinked\\BgFriends.App.dll",
       "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/_bin\/BgFriends.App.dll.br"
     },
@@ -376,7 +376,7 @@
       "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.JSInterop.WebAssembly.dll.br"
     },
     {
-      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\ShMK_Xwsi9wUENSAU_j7wA2KcaWkTHh12t4N3fGJY-w=.hash",
+      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\IBiT89jMyvHfcbxvuD35Wgz11UeNaJgGf8DNLS4Xqdk=.hash",
       "Source": "C:\\Users\\peter\\source\\repos\\boardgame-friends\\BgFriends\\BgFriends.App\\obj\\Debug\\netstandard2.1\\blazor\\unlinked\\BgFriends.App.pdb",
       "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/_bin\/BgFriends.App.pdb.br"
     },
@@ -401,12 +401,12 @@
       "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/blazor.webassembly.js.br"
     },
     {
-      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\Css-V_0P0J_ogVbtnURLhFzAQHPnkR08KKWhqTy2qRg=.hash",
+      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\iY7bcKGAE28GaxgHsE1rQks_SqgzSL2qYeoS5D5ocCg=.hash",
       "Source": "C:\\Users\\peter\\source\\repos\\boardgame-friends\\BgFriends\\BgFriends.App\\obj\\Debug\\netstandard2.1\\blazor\\blazor.boot.json",
       "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/blazor.boot.json.br"
     },
     {
-      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\Jk9Y9XTSR63gGIFD5NgyKjYqkRjnf_amQjYB2NNTUEw=.hash",
+      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\mR5cQ9LPczqk7zzn3iFGT38NjS9U_6uG0Yyifz0nEvY=.hash",
       "Source": "C:\\Users\\peter\\source\\repos\\boardgame-friends\\BgFriends\\BgFriends.App\\obj\\Debug\\netstandard2.1\\blazor\\service-worker-assets.js",
       "Target": "obj\\Debug\\netstandard2.1\\compressed\\service-worker-assets.js.br"
     }
