@@ -1,0 +1,17 @@
+﻿@model BoardGamesViewModel
+@using BGF.App.Core.Entities
+@{
+    ViewData["Title"] = "Board games";
+}
+
+<h1>Board Games</h1>
+
+    <div class="form-group">
+        <label for="TODO">BGG Boardgames</label>
+        <select class="form-control" id="">
+            @foreach (Boardgame boardgame in Model.BggBoardGames)
+            {
+                <option>@boardgame.Title</option>
+            }
+        </select>
+    </div>
