@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BGF.App.Services
 {
-    interface IDbServiceBase<T> where T : class
+    public interface IDbServiceBase<T> where T : class
     {
         Task<EntityEntry<T>> Create(T entity);
         Task<EntityEntry<T>> Delete(T entity);
