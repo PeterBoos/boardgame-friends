@@ -43,9 +43,12 @@ namespace BGF.App.Services
             await _dbContext.SaveChangesAsync();
             return updatedEntity;
         }
-        public Task<IEnumerable<Boardgame>> GetAll()
+        public async Task<IEnumerable<Boardgame>> GetAll()
         {
-            throw new NotImplementedException();
+
+            // TODO: use dbcontext to get boardgame list
+            var bgList = new List<Boardgame>();
+            return bgList;
         }
     }
 }

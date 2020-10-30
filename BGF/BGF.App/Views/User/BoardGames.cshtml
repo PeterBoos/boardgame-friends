@@ -6,12 +6,21 @@
 
 <h1>Board Games</h1>
 
-    <div class="form-group">
-        <label for="TODO">BGG Boardgames</label>
-        <select class="form-control" id="">
-            @foreach (Boardgame boardgame in Model.BggBoardGames)
-            {
-                <option>@boardgame.Title</option>
-            }
-        </select>
-    </div>
+<div class="form-group">
+    <label for="TODO">BGG Board Games</label>
+    <select class="form-control" id="">
+        @foreach (Boardgame boardgame in Model.BggBoardGames)
+        {
+            <option>@boardgame.Title</option>
+        }
+    </select>
+</div>
+<div class="form-group">
+    <label for="TODO">My Board Games</label>
+    <select class="form-control" id="">
+        @foreach (Boardgame boardgame in Model.MyBoardGames)
+        {
+            <option>@boardgame.Title</option>
+        }
+    </select>
+</div>
