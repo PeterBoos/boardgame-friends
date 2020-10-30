@@ -1,5 +1,6 @@
 using BGF.App.Core.Entities;
 using BGF.App.Data;
+using BGF.App.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
@@ -62,6 +63,10 @@ namespace BGF.App
                 options.AccessDeniedPath = "/Identity/Account/AccessDenied";
                 options.SlidingExpiration = true;
             });
+
+            services.AddTransient<IDbServiceBase<Boardgame>, BoardGameDbService>();
+            services.AddTransient<IDbServiceBase<GameSession>, GameSessionDbService>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
