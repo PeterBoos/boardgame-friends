@@ -45,5 +45,10 @@ namespace BGF.App.Controllers
         {
             return View();
         }
+
+        public IActionResult Calendar()
+        {
+            return View();
+        }
     }
 }
