@@ -40,5 +40,10 @@ namespace BGF.App.Controllers
             
             return View(vm);
         }
+
+        public IActionResult Sleeves()
+        {
+            return View();
+        }
     }
 }
