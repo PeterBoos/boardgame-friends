@@ -50,5 +50,10 @@ namespace BGF.App.Controllers
         {
             return View();
         }
+
+        public IActionResult Friends()
+        {
+            return View();
+        }
     }
 }
