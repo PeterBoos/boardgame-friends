@@ -7,6 +7,10 @@
 <h1>Board Games</h1>
 
 <div class="form-group">
+    <label for="TODO">BGG Username</label>
+    <input type="text" name="bggUsername">
+</div>
+<div class="form-group">
     <label for="TODO">BGG Board Games</label>
     <select class="form-control" id="">
         @foreach (Boardgame boardgame in Model.BggBoardGames)
