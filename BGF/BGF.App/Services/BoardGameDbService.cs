@@ -1,6 +1,7 @@
 ﻿using BGF.App.Core.Entities;
 using BGF.App.Data;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using System;
 using System.Collections.Generic;
@@ -37,18 +38,36 @@ namespace BGF.App.Services
             if (entityInDb != null)
             {
                 entityInDb.Description = entity.Description;
-                entity.Title = entity.Title;
+                entity.Name = entity.Name;
             }
             var updatedEntity = _dbContext.Update(entityInDb);
             await _dbContext.SaveChangesAsync();
             return updatedEntity;
         }
+
         public async Task<IEnumerable<Boardgame>> GetAll()
         {
 
             // TODO: use dbcontext to get boardgame list
             var bgList = new List<Boardgame>();
             return bgList;
+        }
+
+        public async Task<List<Boardgame>> GetUsersBoardgames(string username)
+        {
+            var userWithBoardgames = _dbContext.Users
+                .Include(e => e.BoardGames)
+                .ThenInclude(row => row.Boardgame)
+                .FirstOrDefault(e => e.UserName == username);
+
+            if (userWithBoardgames == null)
+            {
+                throw new NullReferenceException($"No user found on username {username}");
+            }
+
+            var boardgames = userWithBoardgames.BoardGames.Select(row => row.Boardgame).ToList();
+
+            return boardgames;
         }
     }
 }

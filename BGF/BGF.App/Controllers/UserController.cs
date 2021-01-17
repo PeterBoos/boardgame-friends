@@ -31,8 +31,8 @@ namespace BGF.App.Controllers
             // TODO: Get board games from BGG API
             vm.BggBoardGames = new List<Boardgame>() 
             { 
-                new Boardgame() {Title = "Monopoly", Id = Guid.Parse("2f73b0af-921f-43fe-be43-626d1047eda4") },
-                new Boardgame() {Title = "Settlers of catan", Id = Guid.Parse("985c492d-5366-4eae-bc2c-2242195c04e4")}
+                new Boardgame() {Name = "Monopoly", Id = Guid.Parse("2f73b0af-921f-43fe-be43-626d1047eda4") },
+                new Boardgame() {Name = "Settlers of catan", Id = Guid.Parse("985c492d-5366-4eae-bc2c-2242195c04e4")}
             };
 
             var list = await _boardGameDbService.GetAll();

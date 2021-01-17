@@ -4,14 +4,16 @@ using BGF.App.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BGF.App.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210117121239_boardgameExtended")]
+    partial class boardgameExtended
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -31,6 +33,9 @@ namespace BGF.App.Data.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<Guid?>("GameSessionId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<string>("Image")
                         .HasColumnType("nvarchar(max)");
 
@@ -40,10 +45,17 @@ namespace BGF.App.Data.Migrations
                     b.Property<string>("ThumbNail")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<int>("YearPublished")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("GameSessionId");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("BoardGames");
                 });
@@ -66,24 +78,14 @@ namespace BGF.App.Data.Migrations
                     b.Property<int>("MinUsers")
                         .HasColumnType("int");
 
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
                     b.HasKey("Id");
 
+                    b.HasIndex("UserId");
+
                     b.ToTable("GameSessions");
-                });
-
-            modelBuilder.Entity("BGF.App.Core.Entities.GameSessionBoardgame", b =>
-                {
-                    b.Property<Guid>("GameSessionId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("BoardgameId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("GameSessionId", "BoardgameId");
-
-                    b.HasIndex("BoardgameId");
-
-                    b.ToTable("GameSessionBoardgames");
                 });
 
             modelBuilder.Entity("BGF.App.Core.Entities.GameSessionDate", b =>
@@ -208,36 +210,6 @@ namespace BGF.App.Data.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers");
-                });
-
-            modelBuilder.Entity("BGF.App.Core.Entities.UserBoardgame", b =>
-                {
-                    b.Property<string>("UserId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<Guid>("BoardgameId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("UserId", "BoardgameId");
-
-                    b.HasIndex("BoardgameId");
-
-                    b.ToTable("UserBoardgames");
-                });
-
-            modelBuilder.Entity("BGF.App.Core.Entities.UserGameSession", b =>
-                {
-                    b.Property<string>("UserId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<Guid>("GameSessionid")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("UserId", "GameSessionid");
-
-                    b.HasIndex("GameSessionid");
-
-                    b.ToTable("UserGameSessions");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -375,19 +347,22 @@ namespace BGF.App.Data.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("BGF.App.Core.Entities.GameSessionBoardgame", b =>
+            modelBuilder.Entity("BGF.App.Core.Entities.Boardgame", b =>
                 {
-                    b.HasOne("BGF.App.Core.Entities.Boardgame", "Boardgame")
-                        .WithMany("GameSessions")
-                        .HasForeignKey("BoardgameId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("BGF.App.Core.Entities.GameSession", "GameSession")
+                    b.HasOne("BGF.App.Core.Entities.GameSession", null)
                         .WithMany("SuggestedBoardgames")
-                        .HasForeignKey("GameSessionId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("GameSessionId");
+
+                    b.HasOne("BGF.App.Core.Entities.User", null)
+                        .WithMany("BoardGames")
+                        .HasForeignKey("UserId");
+                });
+
+            modelBuilder.Entity("BGF.App.Core.Entities.GameSession", b =>
+                {
+                    b.HasOne("BGF.App.Core.Entities.User", null)
+                        .WithMany("GameSessions")
+                        .HasForeignKey("UserId");
                 });
 
             modelBuilder.Entity("BGF.App.Core.Entities.GameSessionDate", b =>
@@ -402,36 +377,6 @@ namespace BGF.App.Data.Migrations
                     b.HasOne("BGF.App.Core.Entities.GameSession", "GameSession")
                         .WithMany()
                         .HasForeignKey("GameSessionId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("BGF.App.Core.Entities.UserBoardgame", b =>
-                {
-                    b.HasOne("BGF.App.Core.Entities.Boardgame", "Boardgame")
-                        .WithMany("Owners")
-                        .HasForeignKey("BoardgameId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("BGF.App.Core.Entities.User", "User")
-                        .WithMany("BoardGames")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("BGF.App.Core.Entities.UserGameSession", b =>
-                {
-                    b.HasOne("BGF.App.Core.Entities.GameSession", "GameSession")
-                        .WithMany("Users")
-                        .HasForeignKey("GameSessionid")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("BGF.App.Core.Entities.User", "User")
-                        .WithMany("GameSessions")
-                        .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

@@ -15,7 +15,7 @@
     <select class="form-control" id="">
         @foreach (Boardgame boardgame in Model.BggBoardGames)
         {
-            <option>@boardgame.Title</option>
+            <option>@boardgame.Name</option>
         }
     </select>
 </div>
@@ -24,7 +24,7 @@
     <select class="form-control" id="">
         @foreach (Boardgame boardgame in Model.MyBoardGames)
         {
-            <option>@boardgame.Title</option>
+            <option>@boardgame.Name</option>
         }
     </select>
 </div>

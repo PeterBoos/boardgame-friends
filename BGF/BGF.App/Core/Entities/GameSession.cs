@@ -9,7 +9,8 @@ namespace BGF.App.Core.Entities
 
         //public List<User> Users { get; set; }
         public List<GameSessionDate> SuggestedDates { get; set; }
-        public List<Boardgame> SuggestedBoardgames { get; set; }
+        public List<GameSessionBoardgame> SuggestedBoardgames { get; set; }
+        public List<UserGameSession> Users { get; set; }
         public int MinUsers { get; set; }
         public int MaxUsers { get; set; }
         public string Location { get; set; }

@@ -12,7 +12,7 @@ namespace BGF.App.Core.Entities
 
         public DateTime RegisterDate { get; set; }
 
-        public List<Boardgame> BoardGames { get; set; }
-        public List<GameSession> GameSessions { get; set; }
+        public List<UserBoardgame> BoardGames { get; set; }
+        public List<UserGameSession> GameSessions { get; set; }
     }
 }

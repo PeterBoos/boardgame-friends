@@ -8,7 +8,7 @@ namespace BGF.App.Services
 {
     public class BggWebRequests
     {
-        static async Task FetchUserCollection(string bggUsername)
+        public async Task<string> FetchUserCollection(string bggUsername)
         {
             var httpClient = HttpClientFactory.Create();
 
@@ -31,9 +31,10 @@ namespace BGF.App.Services
             {
                 string msg = await responseMsg.Content.ReadAsStringAsync();
                 Console.WriteLine(msg);
+                return msg;
             }
 
-            //Console.WriteLine("Hello World!");
+            throw new Exception($"Could not fetch users {bggUsername} BGG collection");
         }
     }
 }
