@@ -23,6 +23,7 @@ namespace BGF.App.Data
         public DbSet<UserBoardgame> UserBoardgames { get; set; }
         public DbSet<UserGameSession> UserGameSessions { get; set; }
         public DbSet<GameSessionBoardgame> GameSessionBoardgames { get; set; }
+        //public DbSet<UserFriend> UserFriends { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -64,6 +65,18 @@ namespace BGF.App.Data
                 .HasOne(gb => gb.Boardgame)
                 .WithMany(u => u.GameSessions)
                 .HasForeignKey(gb => gb.BoardgameId);
+
+            // User Friend(user) join table
+            //modelBuilder.Entity<UserFriend>()
+            //    .HasKey(uf => new { uf.UserId, uf.FriendId });
+            //modelBuilder.Entity<UserFriend>()
+            //    .HasOne(uf => uf.User)
+            //    .WithMany(f => f.Friends)
+            //    .HasForeignKey(uf => uf.UserId);
+            //modelBuilder.Entity<UserFriend>()
+            //    .HasOne(uf => uf.Friend)
+            //    .WithMany(u => u.Friends)
+            //    .HasForeignKey(uf => uf.FriendId);
         }
     }
 }

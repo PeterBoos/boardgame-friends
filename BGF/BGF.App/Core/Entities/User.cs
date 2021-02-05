@@ -14,5 +14,6 @@ namespace BGF.App.Core.Entities
 
         public List<UserBoardgame> BoardGames { get; set; }
         public List<UserGameSession> GameSessions { get; set; }
+        //public List<UserFriend> Friends { get; set; }
     }
 }

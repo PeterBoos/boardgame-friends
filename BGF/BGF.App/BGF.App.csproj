@@ -6,6 +6,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Data\Migrations\20210128204528_friendsAdded.cs" />
+    <Compile Remove="Data\Migrations\20210128204528_friendsAdded.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210128210019_friendsAdded.cs" />
+    <Compile Remove="Data\Migrations\20210128210019_friendsAdded.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210128210116_friendsAdded.cs" />
+    <Compile Remove="Data\Migrations\20210128210116_friendsAdded.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="..\.editorconfig" Link=".editorconfig" />
   </ItemGroup>
 
