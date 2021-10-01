@@ -54,12 +54,23 @@ namespace BGF.App.Controllers
             return View();
         }
 
-        public IActionResult Company()
+        public async Task<IActionResult> Company()
         {
-
+            var companyService = new CompanyService(_context);
             var vm = new CompanyViewModel();
 
+            var companies = await companyService.GetAllCompanies();
+            vm.AllCompanies = companies;
+
             return View(vm);
+        }
+
+        public async Task<IActionResult> SetCompany(Guid companyId)
+        {
+            var companyService = new CompanyService(_context);
+            await companyService.AddUserToCompany(companyId, User.Identity.Name);
+
+            return RedirectToAction(nameof(Company));
         }
     }
 }

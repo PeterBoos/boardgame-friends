@@ -11,13 +11,10 @@ namespace BGF.App.Services
     public class CompanyService
     {
         private readonly ApplicationDbContext _context;
-        private readonly IMapper _mapper;
 
-        public CompanyService(ApplicationDbContext context,
-            IMapper mapper)
+        public CompanyService(ApplicationDbContext context)
         {
             _context = context;
-            _mapper = mapper;
         }
 
         public async Task<List<Company>> GetAllCompanies()
@@ -26,10 +23,10 @@ namespace BGF.App.Services
             return companies;
         }
 
-        public async Task AddUserToCompany(Guid companyId, Guid userId)
+        public async Task AddUserToCompany(Guid companyId, string username)
         {
             var company = _context.Companies.SingleOrDefault(e => e.Id == companyId);
-            var user = _context.Users.SingleOrDefault(e => e.Id == userId.ToString());
+            var user = _context.Users.SingleOrDefault(e => e.UserName == username);
 
             user.Company = company;
             await _context.SaveChangesAsync();
