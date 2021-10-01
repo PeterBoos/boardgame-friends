@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using BGF.App.Core.Entities;
 using BGF.App.Data;
 using BGF.App.Models;
+using BGF.App.Models.User;
 using BGF.App.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -51,6 +52,14 @@ namespace BGF.App.Controllers
         public IActionResult Friends()
         {
             return View();
+        }
+
+        public IActionResult Company()
+        {
+
+            var vm = new CompanyViewModel();
+
+            return View(vm);
         }
     }
 }
