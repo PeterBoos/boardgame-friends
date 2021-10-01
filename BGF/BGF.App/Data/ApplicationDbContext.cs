@@ -18,6 +18,8 @@ namespace BGF.App.Data
 
         public DbSet<SessionComment> SessionComments { get; set; }
 
+        public DbSet<Company> Companies { get; set; }
+
 
         // Join tables
         public DbSet<UserBoardgame> UserBoardgames { get; set; }
