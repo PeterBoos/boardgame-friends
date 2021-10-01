@@ -47,10 +47,9 @@ namespace BGF.App.Services
 
         public async Task<IEnumerable<Boardgame>> GetAll()
         {
+            var boardgames = _dbContext.BoardGames.ToList();
 
-            // TODO: use dbcontext to get boardgame list
-            var bgList = new List<Boardgame>();
-            return bgList;
+            return boardgames.OrderBy(e => e.Name);
         }
 
         public async Task<List<Boardgame>> GetUsersBoardgames(string username)

@@ -1,0 +1,36 @@
+﻿@model BGF.App.Models.Boardgames.BoardgamesListVM
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Available boardgames</h1>
+
+@*<p>
+        <a asp-action="Create">Create New</a>
+    </p>*@
+<table class="table">
+    <thead>
+        <tr>
+            <th></th>
+            <th>Title</th>
+            <th>Year</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Boardgames)
+        {
+            <tr>
+                <td>
+                    <img src="@item.ThumbNail" style="height:100px;" />
+                </td>
+                <td>@item.Name</td>
+                <td>@item.YearPublished</td>
+                <td>
+                    <a class="btn" asp-controller="Boardgames" asp-action="Details" asp-route-id="@item.Id">Details</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
