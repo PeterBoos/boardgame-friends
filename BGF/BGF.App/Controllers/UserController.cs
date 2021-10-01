@@ -4,6 +4,7 @@ using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 using BGF.App.Core.Entities;
+using BGF.App.Data;
 using BGF.App.Models;
 using BGF.App.Services;
 using Microsoft.AspNetCore.Authorization;
@@ -14,9 +15,13 @@ namespace BGF.App.Controllers
     public class UserController : Controller
     {
         private readonly IDbServiceBase<Boardgame> _boardGameDbService;
-        public UserController(IDbServiceBase<Boardgame> boardGameDbService)
+        private readonly ApplicationDbContext _context;
+
+        public UserController(IDbServiceBase<Boardgame> boardGameDbService,
+            ApplicationDbContext context)
         {
             _boardGameDbService = boardGameDbService;
+            _context = context;
         }
         [Authorize]
         public IActionResult Index()
@@ -27,18 +32,10 @@ namespace BGF.App.Controllers
         [Authorize]
         public async Task<IActionResult> BoardGames()
         {
-            var vm = new BoardGamesViewModel();
-            // TODO: Get board games from BGG API
-            vm.BggBoardGames = new List<Boardgame>() 
-            { 
-                new Boardgame() {Name = "Monopoly", Id = Guid.Parse("2f73b0af-921f-43fe-be43-626d1047eda4") },
-                new Boardgame() {Name = "Settlers of catan", Id = Guid.Parse("985c492d-5366-4eae-bc2c-2242195c04e4")}
-            };
-
-            var list = await _boardGameDbService.GetAll();
-            vm.MyBoardGames = list.ToList();
+            var boardgameService = new BoardGameDbService(_context);
+            var myBoardgames = await boardgameService.GetUsersBoardgames(User.Identity.Name);
             
-            return View(vm);
+            return View();
         }
 
         public IActionResult Sleeves()

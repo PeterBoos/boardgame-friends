@@ -1,3 +1,5 @@
+using AutoMapper;
+using AutoMapper.EquivalencyExpression;
 using BGF.App.Core.Entities;
 using BGF.App.Data;
 using BGF.App.Services;
@@ -31,6 +33,13 @@ namespace BGF.App
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddControllersWithViews();
             services.AddRazorPages();
+
+            // Automapper
+            services.AddAutoMapper((serviceProvider, automapper) =>
+            {
+                automapper.AddCollectionMappers();
+                automapper.UseEntityFrameworkCoreModel<ApplicationDbContext>(serviceProvider);
+            }, typeof(ApplicationDbContext).Assembly);
 
             services.Configure<IdentityOptions>(options =>
             {
