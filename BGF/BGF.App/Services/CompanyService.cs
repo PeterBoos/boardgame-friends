@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using BGF.App.Core.Entities;
 using BGF.App.Data;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,6 +31,15 @@ namespace BGF.App.Services
 
             user.Company = company;
             await _context.SaveChangesAsync();
+        }
+
+        public async Task<List<Company>> Search(string searchTerm)
+        {
+            var companies = await _context.Companies
+                .Where(e => e.Name.Contains(searchTerm))
+                .ToListAsync();
+
+            return companies;
         }
     }
 }
