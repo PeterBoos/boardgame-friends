@@ -51,5 +51,18 @@ namespace BGF.App.Controllers
 
             return View();
         }
+
+        public async Task<IActionResult> Search(string searchTerm)
+        {
+            var boardgameService = new BoardGameDbService(_context);
+            var boardgames = boardgameService.Search(searchTerm);
+
+            if (boardgames == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(boardgames);
+        }
     }
 }
