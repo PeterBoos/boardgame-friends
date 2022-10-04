@@ -72,5 +72,13 @@ namespace BGF.App.Controllers
 
             return RedirectToAction(nameof(Company));
         }
+
+        public async Task<IActionResult> Search(string searchTerm)
+        {
+            var friendsService = new FriendsService(_context);
+            var users = friendsService.Search(searchTerm);
+
+            return Ok(users);
+        }
     }
 }
