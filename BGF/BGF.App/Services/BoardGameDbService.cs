@@ -68,5 +68,14 @@ namespace BGF.App.Services
 
             return boardgames;
         }
+
+        public async Task<List<Boardgame>> Search(string searchTerm)
+        {
+            var boardgames = await _dbContext.BoardGames
+                .Where(e => e.Name.Contains(searchTerm))
+                .ToListAsync();
+
+            return boardgames;
+        }
     }
 }
